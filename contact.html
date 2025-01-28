@@ -38,13 +38,50 @@
     <!--
       - #MAIN
     -->
+    <script>
+        document.querySelector("#contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+        
+            const form = event.target;
+            const formData = new FormData(form);
+            const button = form.querySelector(".form-btn");
+        
+            button.disabled = true;
+            button.innerHTML = "Sending...";
+        
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors",
+            })
+                .then(() => {
+                    alert("Your message has been sent successfully!");
+                    form.reset();
+                    button.disabled = false;
+                    button.innerHTML = `<ion-icon name="paper-plane"></ion-icon><span>Send Message</span>`;
+                    
+                    // Simulate redirect after delay
+                    setTimeout(() => {
+                        window.location.href = "index.html"; // Redirect to your homepage
+                    }, 2000); // Redirect after 2 seconds
+                })
+                .catch((error) => {
+                    alert("There was an error sending your message. Please try again.");
+                    button.disabled = false;
+                    button.innerHTML = `<ion-icon name="paper-plane"></ion-icon><span>Send Message</span>`;
+                    console.error("Error:", error);
+                });
+        });
+        
+    </script>
+    
 
     <main>
 
         <!--
           - #SIDEBAR
         -->
-
+        
         <aside class="sidebar" data-sidebar>
 
             <div class="sidebar-info">
@@ -184,10 +221,10 @@
                     <li class="navbar-item">
                         <a href="resume.html" class="navbar-link">Resume</a>
                     </li>
-
+<!-- 
                     <li class="navbar-item">
                         <a href="blog.html" class="navbar-link">Blog</a>
-                    </li>
+                    </li> -->
 
                     <li class="navbar-item">
                         <a href="#" class="navbar-link active">Contact</a>
@@ -212,7 +249,22 @@
 
                     <h3 class="h3 form-title">Contact Form</h3>
 
+                    <!-- NEVER FORGET TO UPDATE ENTRY IDs OF FORM: https://www.youtube.com/watch?v=hzulq9Cr2Dw -->
+                    
                     <form action="https://docs.google.com/forms/d/e/1FAIpQLSdC_1r9miQWpPxKId40JzyXFOfs5Iqew35aPvp835znhIOSKw/formResponse"
+                        method="POST" id="contactForm" name="EmailForm" class="form">
+                        <div class="input-wrapper">
+                            <input type="text" name="entry.689158380" class="form-input" placeholder="Full name" required>
+                            <input type="email" name="entry.825294723" class="form-input" placeholder="Email address" required>
+                        </div>
+                        <textarea name="entry.1945591926" class="form-input" placeholder="Your Message" required></textarea>
+                        <button class="form-btn" type="submit">
+                            <ion-icon name="paper-plane"></ion-icon>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+
+                    <!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSdC_1r9miQWpPxKId40JzyXFOfs5Iqew35aPvp835znhIOSKw/formResponse"
                           target="_self" method="POST" id="mG61Hd"
                           name="EmailForm" class="form" data-form>
 
@@ -229,7 +281,7 @@
                             <span>Send Message</span>
                         </button>
 
-                    </form>
+                    </form> -->
                 </section>
 
             </article>
