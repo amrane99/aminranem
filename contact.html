@@ -55,7 +55,8 @@
                 mode: "no-cors",
             })
                 .then(() => {
-                    alert("Your message has been sent successfully!");
+                    <!-- alert("Your message has been sent successfully!"); -->
+                    alert("There was an error sending your message. Please try again.");
                     form.reset();
                     button.disabled = false;
                     button.innerHTML = `<ion-icon name="paper-plane"></ion-icon><span>Send Message</span>`;
@@ -119,7 +120,7 @@
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
 
-                            <a href="mailto:amin.ranem@gris.informatik.tu-darmstadt.de" class="contact-link">amin.ranem@gris.informatik.tu-darmstadt.de</a>
+                            <a href="mailto:amin.ranem@googlemail.com" class="contact-link">amin.ranem@googlemail.com</a>
                         </div>
 
                     </li>
