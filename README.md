@@ -8,8 +8,8 @@ A single-page professional website (pure HTML/CSS/JS, no build step).
 index.html                  — the entire site (styles and scripts inlined)
 assets/images/profile.jpg   — profile photo
 assets/Amin_Ranem_CV.pdf    — CV served by the "Download CV" buttons
-                              (source: ~/Desktop/Amin_Ranem_CV.docx — re-export to
-                              PDF and replace this file after editing)
+                              (source: Amin_Ranem_CV.docx in this folder. Re-export to
+                              PDF and replace this file after editing.)
 ```
 
 ## Preview locally
