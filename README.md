@@ -23,11 +23,11 @@ python3 -m http.server 8000
 
 ## Deploy to GitHub Pages (replace the current site)
 
-The site currently lives at https://github.com/amrane99/aminranem and is served at
-https://amrane99.github.io/aminranem/.
+The site currently lives at https://github.com/aminranem and is served at
+https://aminranem.github.io/.
 
 ```bash
-git clone https://github.com/amrane99/aminranem.git
+git clone https://github.com/aminranem/aminranem.github.io.git
 cd aminranem
 # remove the old template files
 git rm -r assets contact.html resume.html index.txt index.html Folder.DotSettings
